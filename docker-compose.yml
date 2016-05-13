@@ -1,6 +1,6 @@
 web:
-  image: php:5.5-apache
+  build: ./php
   ports:
     - 8080:80
   volumes:
-    - ./project/:/var/www/html/
+    - ./project/build:/var/www/html/
