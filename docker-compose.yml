@@ -1,25 +1,8 @@
 # Run with Apache2 and PHP 5.5.
+data:
+  image: vdmi/php-drupal
+
 web:
-  build: ./php-5.5
+  image: vdmi/apache
   ports:
-    - 8080:80
-  volumes:
-    - ./project/build:/var/www/html/
-  links:
-    - db:db
-    - solr:solr
-
-# Run with MySQL 5.6.
-#
-# Properties
-# - Default root pw
-# - Default drupal database
-db:
-  image: mysql:5.6
-  environment:
-    - MYSQL_ROOT_PASSWORD=root
-    - MYSQL_DATABASE=drupal
-
-# Run with solr 4.10.
-solr:
-  image: twinbit/docker-drupal-solr
+    - 80
